@@ -18,6 +18,7 @@ class AuthController extends Controller
 
     public function register(Request $request)
     {
+        $this->validate($request, User::$rules);
         User::create([
             "name" => $request->name,
             "email" => $request->email,

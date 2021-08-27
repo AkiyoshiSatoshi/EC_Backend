@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AuthController;
 
+use App\Http\Controllers\ProductController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -30,3 +32,6 @@ Route::group([
     Route::post('refresh', [AuthController::class, 'refresh']);
     Route::get('user', [AuthController::class, 'me']);
 });
+
+Route::get('/product', [ProductController::class, 'index']);
+Route::get('/product/{id}', [ProductController::class, 'show']);

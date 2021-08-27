@@ -24,6 +24,12 @@ class User extends Authenticatable implements JWTSubject
         'password',
     ];
 
+    public static $rules = array(
+        'name' => 'required|min:4',
+        'email' => 'required|email',
+        'password' => 'required|min:6'
+    );
+
     /**
      * The attributes that should be hidden for arrays.
      *
